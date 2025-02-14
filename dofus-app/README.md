@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fullstack Test
 
-## Getting Started
+## Description
 
-First, run the development server:
+Ce projet permet d'afficher des objets provenant du jeu **Dofus**, récupérés via l'API [DofusDB](https://api.dofusdb.fr/items/). 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Affichage des objets** : Une fois les objets chargés, on peux voir des informations sur chaque objet en cliquant dessus.
+- **Recherche** : Il est possible de rechercher des objets par leur nom ou type.
+- **Interactions** : 
+  - Cliquer sur un dofus items recharche la page.
+  - Cliquer sur "Charger des données" déclenche une requête à l'API pour récupérer les données et les stocker dans une base de données MongoDB.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prérequis
+Assurez-vous d'avoir **Docker Desktop** installé et en cours d'exécution pour MongoDB.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Étapes d'installation
 
-## Learn More
+1. **Clonez ce repository** sur votre machine locale.
 
-To learn more about Next.js, take a look at the following resources:
+2. **Démarrer MongoDB avec Docker** :
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   Ouvrez un terminal dans le répertoire du projet et lancez la commande suivante pour démarrer le service MongoDB avec Docker Compose. Cela va démarrer MongoDB dans un container Docker.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   docker-compose up -d
+   npm install
+   npm run dev
 
-## Deploy on Vercel
+Accédez à l'application :
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Ouvrez votre navigateur et allez à l'adresse suivante pour voir l'application en fonctionnement :
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+http://localhost:3000
