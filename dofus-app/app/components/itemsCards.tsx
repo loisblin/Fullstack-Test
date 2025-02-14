@@ -18,7 +18,7 @@ const Items = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedType, setSelectedType] = useState('');
 
-  // Fonction pour récupérer les items
+  
   const fetchItems = async (page: number, search: string, type: string) => {
     const res = await fetch(`/api/getItems?page=${page}&limit=12&search=${search}&type=${type}`);
     const data = await res.json();
@@ -26,12 +26,12 @@ const Items = () => {
     setTotalPages(data.totalPages);
   };
 
-  // Met à jour la liste des items quand les filtres changent
+  
   useEffect(() => {
     fetchItems(currentPage, searchTerm, selectedType);
   }, [currentPage, searchTerm, selectedType]);
 
-  // Réinitialise la page à 1 quand la recherche ou le type change
+  
   useEffect(() => {
     setCurrentPage(1);
   }, [searchTerm, selectedType]);

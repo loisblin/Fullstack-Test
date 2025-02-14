@@ -1,31 +1,29 @@
-// pages/page.tsx
-
-'use client'; // <-- Assurez-vous que ce fichier est côté client
+'use client'; 
 import { useState } from 'react';
 import ItemsCards from './components/itemsCards';
 import './globals.css';
 import Image from 'next/image';
 
 const HomePage = () => {
-  const [items, setItems] = useState<any[]>([]);  // Stockage des items récupérés
+  const [items, setItems] = useState<any[]>([]);  
 
-  // Fonction pour recharger la page
+
   const handleReloadPage = () => {
     window.location.reload();
   };
 
-  // Fonction pour charger les données via l'API
+ 
   const handleLoadData = async () => {
     try {
-      // Envoie une requête POST à l'API pour récupérer les items
+
       const res = await fetch('http://localhost:3000/api/fetchItems', {
-        method: 'POST', // Indique que c'est une requête POST
+        method: 'POST', 
         headers: {
           'Content-Type': 'application/json',
         },
-        // Tu peux envoyer un body si nécessaire, par exemple des filtres
+      
         body: JSON.stringify({
-          // Par exemple : { type: "anneau" }
+       
         }),
       });
   
@@ -34,7 +32,7 @@ const HomePage = () => {
       }
   
       const data = await res.json();
-      setItems(data); // Mise à jour du state avec les items récupérés
+      setItems(data); 
       console.log('Données chargées :', data);
     } catch (error) {
       console.error('Erreur lors du chargement des données :', error);
@@ -47,7 +45,7 @@ const HomePage = () => {
   {/* Titre "Dofus Items" pour recharger la page */}
   <h1
     className="text-3xl font-bold cursor-pointer transition-all duration-300 transform hover:underline hover:scale-110"
-    onClick={handleReloadPage}  // Recharger la page au clic
+    onClick={handleReloadPage}  
   >
     Dofus Items
   </h1>
@@ -58,15 +56,15 @@ const HomePage = () => {
   {/* Titre "Charger des données" pour appeler l'API */}
   <h1
     className="text-3xl font-bold cursor-pointer transition-all duration-300 transform hover:underline hover:scale-110"
-    onClick={handleLoadData}  // Charger les données via l'API au clic
+    onClick={handleLoadData} 
   >
-    Charger des données
+    Charger les données
   </h1>
 </div>
 
       {/* Affichage des items récupérés */}
       <div  className="bg-cover bg-center w-full min-h-screen p-4">
-        <ItemsCards/>  {/* Passe les items récupérés au composant ItemsCards */}
+        <ItemsCards/>  
       </div>
     </div>
   );

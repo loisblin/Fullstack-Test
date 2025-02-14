@@ -18,7 +18,7 @@ const ItemCard: React.FC<ItemCardProps> = ({ _id, name, level, type, description
   return (
     <motion.div
       className="relative w-[200px] h-[250px] perspective-1000"
-      onClick={() => setIsFlipped(!isFlipped)} // Inverse l'état au clic
+      onClick={() => setIsFlipped(!isFlipped)} 
     >
       {/* Carte avec effet flip, surlignage vert au hover, et légère augmentation de taille */}
       <motion.div

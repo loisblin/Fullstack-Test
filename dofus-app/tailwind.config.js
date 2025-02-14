@@ -1,6 +1,6 @@
 module.exports = {
   content: [
-    './app/**/*.{js,ts,jsx,tsx}',  // Indiquer à Tailwind d'écouter les fichiers dans le dossier app
+    './app/**/*.{js,ts,jsx,tsx}',  
   ],
   theme: {
     extend: {},

@@ -17,13 +17,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       const { page = 1, limit = 12, search = '', type = '' } = req.query;
       const query: any = {};
-
-      // Filtrer par nom si `search` est défini
       if (search) {
         query.name = { $regex: search, $options: 'i' };
       }
 
-      // Filtrer par type si `type` est défini
       if (type) {
         query.type = type;
       }
